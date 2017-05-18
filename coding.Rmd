@@ -1,0 +1,50 @@
+---
+title: "Some cool feature"
+author: "Thomas Guillerme"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_width: 6
+    fig_height: 6
+---
+
+
+# Coding in markdown?
+
+You can also use markdown to simply code! For the smoothness you will need to install the `knitr` R package as well a some packages on your text editor (`knitr` as well in Sublime).
+
+## For example
+
+Here's a really complex example
+
+```{r}
+## What's the result of this?
+1 + 1
+
+## Or of that?
+mean(c(1,1,1,1))
+
+```
+
+Sweet eh?
+
+## But you can also do some graphs of course!
+
+
+```{r, fig.width=6, fig.height=6}
+plot(1)
+```
+
+Or more fancy:
+
+```{r, fig.width=6, fig.height=6}
+## Pretty example from graphics::image manual
+x <- y <- seq(-4*pi, 4*pi, len = 27)
+r <- sqrt(outer(x^2, y^2, "+"))
+image(z = z <- cos(r^2)*exp(-r/6), col  = gray((0:32)/32))
+image(z, axes = FALSE, main = "Math can be beautiful ...",
+      xlab = expression(cos(r^2) * e^{-r/6}))
+contour(z, add = TRUE, drawlabels = FALSE)
+```
+
+
